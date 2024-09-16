@@ -1,15 +1,17 @@
 import React from "react";
 import { Text, View } from "react-native";
-import { styled } from "nativewind";
-
-const StyledText = styled(Text);
-const StyledView = styled(View);
+import { Stack } from "expo-router";
+import { StatusBar } from "expo-status-bar";
 
 const AuthLayout = () => {
   return (
-    <StyledView>
-      <StyledText>AuthLayout</StyledText>
-    </StyledView>
+    <>
+      <Stack>
+        <Stack.Screen name="SignIn" options={{ headerShown: false }} />
+        <Stack.Screen name="SignUp" options={{ headerShown: false }} />
+      </Stack>
+      <StatusBar backgroundColor="#161622" style="light" />
+    </>
   );
 };
 

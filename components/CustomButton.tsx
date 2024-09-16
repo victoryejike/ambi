@@ -5,8 +5,8 @@ import { isLoading } from "expo-font";
 type CustomButtonType = {
   title: string;
   handlePress: () => void;
-  containerStyles: string;
-  textStyles: string;
+  containerStyles?: string;
+  textStyles?: string;
   isLoading: boolean;
 };
 
