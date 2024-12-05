@@ -4,8 +4,21 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { images } from "@/constants";
 import CustomButton from "@/components/CustomButton";
 import { StatusBar } from "expo-status-bar";
+import { useContext } from "react";
+import { useGlobalContext } from "@/context/GlobalProvider";
+
+/**
+ * The root of the application
+ * @returns a jsx element showing the home page routes
+ *
+ */
 
 const App = () => {
+  const { isLogged, isLoading } = useGlobalContext();
+  console.log(isLogged);
+
+  if (!isLoading && isLogged) return <Redirect href="/home" />;
+
   return (
     <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: "100%" }}>

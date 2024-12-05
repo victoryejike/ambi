@@ -7,7 +7,7 @@ type CustomButtonType = {
   handlePress: () => void;
   containerStyles?: string;
   textStyles?: string;
-  isLoading: boolean;
+  isLoading?: boolean;
 };
 
 const CustomButton: React.FC<CustomButtonType> = ({
@@ -15,7 +15,7 @@ const CustomButton: React.FC<CustomButtonType> = ({
   handlePress,
   containerStyles,
   textStyles,
-  isLoading,
+  isLoading = false,
 }) => {
   return (
     <TouchableOpacity
